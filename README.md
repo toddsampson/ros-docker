@@ -1,6 +1,6 @@
-# ROS Docker Packages
+# ROS Indigo Docker Packages
 
-Docker Image wrappers and config scripts for various [ROS](http://www.ros.org/) (Robot Operating System) packages I have needed for my projects.  I tried to keep with Docker's simple-purpose image/container philosophy.  As such, you will need to use Docker's experimental networking to have the various containers play nicely together (more below).
+Docker Image wrappers and config scripts for various [ROS](http://www.ros.org/) (Robot Operating System) Indigo packages I have needed for my projects.  I tried to keep with Docker's simple-purpose image/container philosophy.  As such, you will need to use Docker's experimental networking to have the various containers play nicely together (more below).
 
 
 ## Use with Docker Compose
