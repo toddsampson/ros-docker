@@ -17,8 +17,8 @@ Be sure you are running Docker Compose with Experimental Networking enabled. (Fo
 * [ROS Master](http://wiki.ros.org/roscore) -- Simple laucch script around ROS's official roscore Docker Image.
 * [ROS Tutorials](http://wiki.ros.org/ROS/Tutorials) -- Full tutorials are installed, Docker Compose only runs talker/listener
 * [ROS Image View](http://wiki.ros.org/image_view) -- Full image-pipeline is installed, Docker Compose only launches image_view
-* [ROS Leap Motion](http://wiki.ros.org/leap_motion)
-* [ROS USB Camera](http://wiki.ros.org/libuvc_camera)
+* [ROS Leap Motion](http://wiki.ros.org/leap_motion) -- Finger and hand tracking in ROS with the Leap Motion
+* [ROS USB Camera](http://wiki.ros.org/libuvc_camera) -- USB webcam image stream for ROS using libuvc_camera
 
 
 ## Notes
