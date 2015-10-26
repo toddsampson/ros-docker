@@ -78,7 +78,7 @@ image_view:
       - "DISPLAY=$DISPLAY"
       - "ROS_HOSTNAME=image_view"
       - "ROS_MASTER_URI=http://rosmaster:11311"
-  command: rosrun image_view image_view image:=/camera/depth_registered/image_raw _baud:=57600
+  command: rosrun image_view image_view image:=/image_raw
 
 # ROS RVIZ
 rviz:
