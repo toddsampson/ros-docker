@@ -1,7 +1,7 @@
 # ROS Tutorial Talker
 talker:
-  build: ros-tutorials/.
-#  image: toddsampson:ros-tutorials
+  # build: ros-tutorials/.
+  image: toddsampson:ros-indigo-tutorials
   container_name: talker
   hostname: talker
   name: talker
@@ -14,8 +14,8 @@ talker:
 
 # ROS Tutorial Listener
 listener:
-  build: ros-tutorials/.
-#  image: toddsampson:ros-tutorials
+  # build: ros-tutorials/.
+  image: toddsampson:ros-indigo-tutorials
   container_name: listener
   hostname: listener
   name: listener
@@ -28,8 +28,8 @@ listener:
 
 # ROS Structure Sensor
 structure_sensor:
-  build: ros-structure_sensor/.
-  # image: toddsampson/ros-indigo-structure_sensor
+  # build: ros-structure_sensor/.
+  image: toddsampson/ros-indigo-structure_sensor
   container_name: structure_sensor
   hostname: structure_sensor
   name: structure_sensor
@@ -49,8 +49,8 @@ structure_sensor:
 
 # ROS USBCAM
 usbcam:
-  build: ros-usbcam/.
-  # image: toddsampson/ros-indigo-usbcam
+  # build: ros-usbcam/.
+  image: toddsampson/ros-indigo-usbcam
   container_name: usbcam
   hostname: usbcam
   name: usbcam
@@ -64,8 +64,8 @@ usbcam:
 
 # ROS Image View
 image_view:
-  build: ros-image_pipeline/.
-  # image: toddsampson/ros-indigo-image_pipeline
+  # build: ros-image_pipeline/.
+  image: toddsampson/ros-indigo-image_pipeline
   container_name: image_view
   hostname: image_view
   name: image_view
