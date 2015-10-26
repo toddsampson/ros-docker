@@ -23,9 +23,11 @@ Be sure you are running Docker Compose with Experimental Networking enabled. (Fo
 
 ## Notes
 
-* RVIS is not working yet -- it appears to be restarting the Linux display.  I would love ideas/code to help fix it.
+* IMPORTANT: If you are using Image View, RVIZ or other packages that have graphic displays be sure to set `xhost +` on the host machine to authorize a connection to the X host.  Also be sure to set the correct uid and gid to your user in the Dockerfile.
+* RVIZ is not working yet -- it appears to be restarting the Linux display.  I would love ideas/code to help fix it.
 * I am working on making each package available on Docker Hub as an automated build.  If one is missing because I haven't added it yet, use the `build: ros-package-name/.` in the docker-compose.yml to build it.
 * I made these Docker Images as a fast way to spin-up ROS for my own projects.  As such, things are likely to change a lot.  I recommend forking the code for your own use.
+* I am running these under Linux.  They should work just fine under OSX using Docker-Machine and XQuartz with some minor debugging.  I don't know enough about Docker under Windows to know how well it will work.
 * I'd love recommendations for updates and improvements/additional ROS packages as pull-requests.
 
 Cheers,
