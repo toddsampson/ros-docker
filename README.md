@@ -31,5 +31,4 @@ Be sure you are running Docker Compose with Experimental Networking enabled. (Fo
 * I'd love recommendations for updates and improvements/additional ROS packages as pull-requests.
 
 Cheers,
-
-- Todd
+ - Todd
