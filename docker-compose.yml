@@ -4,7 +4,6 @@ talker:
   image: toddsampson:ros-indigo-tutorials
   container_name: talker
   hostname: talker
-  name: talker
   # net: rosdocker
   environment:
       - "ROS_HOSTNAME=talker"
@@ -18,7 +17,6 @@ listener:
   image: toddsampson:ros-indigo-tutorials
   container_name: listener
   hostname: listener
-  name: listener
   # net: rosdocker
   environment:
       - "ROS_HOSTNAME=listener"
@@ -32,7 +30,6 @@ structure_sensor:
   image: toddsampson/ros-indigo-structure_sensor
   container_name: structure_sensor
   hostname: structure_sensor
-  name: structure_sensor
   volumes_from:
       - "rosmaster"
   # net: rosdocker
@@ -53,7 +50,6 @@ usbcam:
   image: toddsampson/ros-indigo-usbcam
   container_name: usbcam
   hostname: usbcam
-  name: usbcam
 #    net: rosdocker
   devices:
       - "/dev/bus/usb:/dev/bus/usb"
@@ -68,7 +64,6 @@ image_view:
   image: toddsampson/ros-indigo-image_pipeline
   container_name: image_view
   hostname: image_view
-  name: image_view
   volumes_from:
       - "rosmaster"
   # net: rosdocker
@@ -85,8 +80,7 @@ rviz:
   build: ros-rviz/.
   # image: toddsampson/ros-indigo-rviz
   container_name: rviz
-  hostnamename: rviz
-  name: rviz
+  hostname: rviz
   # net: rosdocker
   volumes:
     - "/tmp/.X11-unix:/tmp/.X11-unix"
@@ -101,7 +95,6 @@ rosmaster:
   image: ros:latest
   container_name: rosmaster
   hostname: rosmaster
-  name: rosmaster
   # net: rosdocker
   ports:
        - "11311:11311"
