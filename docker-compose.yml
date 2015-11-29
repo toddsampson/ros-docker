@@ -4,8 +4,7 @@ talker:
   image: toddsampson:ros-indigo-tutorials
   container_name: talker
   hostname: talker
-  name: talker
-  # net: rosdocker
+  net: rosdocker
   environment:
       - "ROS_HOSTNAME=talker"
       - "ROS_MASTER_URI=http://rosmaster:11311"
@@ -18,8 +17,7 @@ listener:
   image: toddsampson:ros-indigo-tutorials
   container_name: listener
   hostname: listener
-  name: listener
-  # net: rosdocker
+  net: rosdocker
   environment:
       - "ROS_HOSTNAME=listener"
       - "ROS_MASTER_URI=http://rosmaster:11311"
@@ -32,10 +30,9 @@ structure_sensor:
   image: toddsampson/ros-indigo-structure_sensor
   container_name: structure_sensor
   hostname: structure_sensor
-  name: structure_sensor
   volumes_from:
       - "rosmaster"
-  # net: rosdocker
+  net: rosdocker
   devices:
       - "/dev/bus/usb:/dev/bus/usb"
   volumes:
@@ -53,8 +50,7 @@ usbcam:
   image: toddsampson/ros-indigo-usbcam
   container_name: usbcam
   hostname: usbcam
-  name: usbcam
-  # net: rosdocker
+  net: rosdocker
   devices:
       - "/dev/bus/usb:/dev/bus/usb"
   environment:
@@ -68,10 +64,9 @@ leap_motion:
   # image: toddsampson/ros-indigo-leap_motion
   container_name: leap_motion
   hostname: leap_motion
-  name: leap_motion
   volumes_from:
       - "rosmaster"
-  # net: rosdocker
+  net: rosdocker
   privileged: true
   devices:
       - "/dev/bus/usb:/dev/bus/usb"
@@ -94,10 +89,9 @@ image_view:
   image: toddsampson/ros-indigo-image_pipeline
   container_name: image_view
   hostname: image_view
-  name: image_view
   volumes_from:
       - "rosmaster"
-  # net: rosdocker
+  net: rosdocker
   volumes:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
   environment:
@@ -112,8 +106,7 @@ rviz:
   # image: toddsampson/ros-indigo-rviz
   container_name: rviz
   hostname: rviz
-  name: rviz
-  # net: rosdocker
+  net: rosdocker
   volumes:
     - "/tmp/.X11-unix:/tmp/.X11-unix"
   environment:
@@ -128,8 +121,7 @@ actionlib:
   # image: toddsampson:ros-indigo-actionlib
   container_name: actionlib
   hostname: actionlib
-  name: actionlib
-  # net: rosdocker
+  net: rosdocker
   environment:
       - "ROS_HOSTNAME=actionlib"
       - "ROS_MASTER_URI=http://rosmaster:11311"
@@ -142,7 +134,6 @@ kinect2:
   # image: toddsampson:ros-indigo-kinect2
   container_name: kinect2
   hostname: kinect2
-  name: kinect2
   net: rosdocker
   devices:
       - "/dev/bus/usb:/dev/bus/usb"
