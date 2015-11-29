@@ -54,13 +54,39 @@ usbcam:
   container_name: usbcam
   hostname: usbcam
   name: usbcam
-#    net: rosdocker
+  # net: rosdocker
   devices:
       - "/dev/bus/usb:/dev/bus/usb"
   environment:
       - "ROS_HOSTNAME=usbcam"
       - "ROS_MASTER_URI=http://rosmaster:11311"
   command: rosrun libuvc_camera camera_node _height:=480 _width:=640 _vendor:=2084 _video_mode:=uncompressed _frame_rate:=30
+
+# ROS Leap Motion
+leap_motion:
+  build: ros-leap_motion/.
+  # image: toddsampson/ros-indigo-leap_motion
+  container_name: leap_motion
+  hostname: leap_motion
+  name: leap_motion
+  volumes_from:
+      - "rosmaster"
+  # net: rosdocker
+  privileged: true
+  devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+  volumes:
+      # - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+  environment:
+      - "QT_X11_NO_MITSHM=1"
+      - "DISPLAY=$DISPLAY"
+      - "ROS_HOSTNAME=leap_motion"
+      - "ROS_MASTER_URI=http://rosmaster:11311"
+  ports:
+      - "6437:6437"
+  command: bash
+  # command: rosrun leap_motion sender.py
 
 # ROS Image View
 image_view:
@@ -85,7 +111,7 @@ rviz:
   build: ros-rviz/.
   # image: toddsampson/ros-indigo-rviz
   container_name: rviz
-  hostnamename: rviz
+  hostname: rviz
   name: rviz
   # net: rosdocker
   volumes:
@@ -96,13 +122,44 @@ rviz:
       - "ROS_MASTER_URI=http://rosmaster:11311"
   command: rosrun rviz rviz
 
+# ROS Actionlib
+actionlib:
+  build: ros-actionlib/.
+  # image: toddsampson:ros-indigo-actionlib
+  container_name: actionlib
+  hostname: actionlib
+  name: actionlib
+  # net: rosdocker
+  environment:
+      - "ROS_HOSTNAME=actionlib"
+      - "ROS_MASTER_URI=http://rosmaster:11311"
+  # command: bash
+  command: bash
+
+# ROS Kinect2
+kinect2:
+  build: ros-kinect2/.
+  # image: toddsampson:ros-indigo-kinect2
+  container_name: kinect2
+  hostname: kinect2
+  name: kinect2
+  net: rosdocker
+  devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+  environment:
+      - "ROS_HOSTNAME=kinect2"
+      - "ROS_MASTER_URI=http://rosmaster:11311"
+  # command: bash
+  command: bash
+
+
 # ROS MASTER (ROSCORE)
 rosmaster:
   image: ros:latest
   container_name: rosmaster
   hostname: rosmaster
   name: rosmaster
-  # net: rosdocker
+  net: rosdocker
   ports:
        - "11311:11311"
   command: roscore
