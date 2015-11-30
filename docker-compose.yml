@@ -141,7 +141,7 @@ kinect2:
       - "ROS_HOSTNAME=kinect2"
       - "ROS_MASTER_URI=http://rosmaster:11311"
   # command: bash
-  command: bash
+  command: roslaunch kinect2_bridge kinect2_bridge.launch
 
 
 # ROS MASTER (ROSCORE)

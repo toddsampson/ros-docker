@@ -3,7 +3,8 @@ MAINTAINER Todd Sampson "toddsampson+docker@gmail.com"
 
 RUN apt-get update && apt-get -y install software-properties-common && \
     add-apt-repository ppa:ethz-asl/backports && add-apt-repository ppa:ethz-asl/drivers && \
-    add-apt-repository ppa:ethz-asl/ros && apt-get -y update
+    add-apt-repository ppa:ethz-asl/ros && apt-get -y update && \
+    apt-get -y install libcanberra-gtk-module 
 RUN apt-get -y install ros-indigo-kinect2
 
 # IMPORTANT: Update these values to your primary computer user id and group id

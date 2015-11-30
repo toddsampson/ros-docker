@@ -19,3 +19,5 @@ RUN export uid=${uid} gid=${gid} && \
 
 USER ros
 ENV HOME /home/ros
+
+RUN printf "export QT_GRAPHICSSYSTEM=native\nsource /opt/ros/indigo/setup.bash" >> /home/ros/.bashrc
