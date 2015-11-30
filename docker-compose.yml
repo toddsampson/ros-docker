@@ -149,7 +149,6 @@ rosmaster:
   image: ros:latest
   container_name: rosmaster
   hostname: rosmaster
-  name: rosmaster
   net: rosdocker
   ports:
        - "11311:11311"
