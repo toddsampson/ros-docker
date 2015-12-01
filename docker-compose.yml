@@ -128,6 +128,22 @@ actionlib:
   # command: bash
   command: bash
 
+# ROS Kinect
+kinect:
+  build: ros-kinect/.
+  # image: toddsampson:ros-indigo-kinect
+  container_name: kinect
+  hostname: kinect
+  net: rosdocker
+  devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+  environment:
+      - "ROS_HOSTNAME=kinect"
+      - "ROS_MASTER_URI=http://rosmaster:11311"
+  # command: bash
+  command: roslaunch freenect_launch freenect.launch depth_registration:=true
+
+
 # ROS Kinect2
 kinect2:
   build: ros-kinect2/.
