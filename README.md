@@ -21,7 +21,6 @@ Be sure you are running Docker Compose with Experimental Networking enabled. (Fo
 * [ROS USB Camera](http://wiki.ros.org/libuvc_camera) -- USB webcam image stream for ROS using [libuvc_camera](http://wiki.ros.org/libuvc_camera) ([More info](http://toddsampson.com/post/131447984382/ros-usb-sensor-input-in-docker))
 * [ROS KINECT](http://wiki.ros.org/libfreenect) -- Kinect (v1) sensor using the libfreenect package.  Also includes [openni](http://wiki.ros.org/openni_launch) packages.
 * [ROS RViz](http://wiki.ros.org/rviz) -- RViz 3D visualization tool for ROS
-* [ROS Leap Motion](http://wiki.ros.org/leap_motion) -- ROS driver for the Leap Motion gesture sensor
 
 
 ## Notes
