@@ -60,8 +60,8 @@ usbcam:
 
 # ROS Leap Motion
 leap_motion:
-  build: ros-leap_motion/.
-  # image: toddsampson/ros-indigo-leap_motion
+  # build: ros-leap_motion/.
+  image: toddsampson/ros-indigo-leap_motion
   container_name: leap_motion
   hostname: leap_motion
   volumes_from:
@@ -102,8 +102,8 @@ image_view:
 
 # ROS RVIZ
 rviz:
-  build: ros-rviz/.
-  # image: toddsampson/ros-indigo-rviz
+  # build: ros-rviz/.
+  image: toddsampson/ros-indigo-rviz
   container_name: rviz
   hostname: rviz
   net: rosdocker
@@ -125,13 +125,12 @@ actionlib:
   environment:
       - "ROS_HOSTNAME=actionlib"
       - "ROS_MASTER_URI=http://rosmaster:11311"
-  # command: bash
   command: bash
 
 # ROS Kinect
 kinect:
-  build: ros-kinect/.
-  # image: toddsampson:ros-indigo-kinect
+  # build: ros-kinect/.
+  image: toddsampson:ros-indigo-kinect
   container_name: kinect
   hostname: kinect
   net: rosdocker
